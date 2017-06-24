@@ -64,6 +64,7 @@ defmodule LZString.Base64 do
   def base64_to_bitstring(43), do: << 62 :: size(6) >>
   def base64_to_bitstring(47), do: << 63 :: size(6) >>
   def base64_to_bitstring(61), do: << 64 :: size(6) >>
+  def base64_to_bitstring(c), do: IO.inspect ~s'unexpected character #{c} #{<<c :: utf8>>}'
 
   defmacro __using__(_env) do
     quote do
